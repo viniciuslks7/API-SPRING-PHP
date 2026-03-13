@@ -1,0 +1,81 @@
+@baseUrl = http://localhost:8090
+
+### SEXOS
+GET {{baseUrl}}/sexos
+
+### Criar sexo
+POST {{baseUrl}}/sexos
+Content-Type: application/json
+
+{
+  "nomesexo": "MASCULINO"
+}
+
+### RUAS
+GET {{baseUrl}}/ruas
+
+### BAIRROS
+GET {{baseUrl}}/bairros
+
+### UFS
+GET {{baseUrl}}/ufs
+
+### CIDADES
+GET {{baseUrl}}/cidades
+
+### CEPS
+GET {{baseUrl}}/ceps
+
+### TIPOS
+GET {{baseUrl}}/tipos
+
+### MARCAS
+GET {{baseUrl}}/marcas
+
+### FORNECEDORES
+GET {{baseUrl}}/fornecedores
+
+### PRODUTOS
+GET {{baseUrl}}/produtos
+
+### CLIENTES
+GET {{baseUrl}}/clientes
+
+### COMPRAS
+GET {{baseUrl}}/compras
+
+### COMPRA PRODUTOS
+GET {{baseUrl}}/compra-produtos
+
+### Exemplo de criar cliente
+POST {{baseUrl}}/clientes
+Content-Type: application/json
+
+{
+  "nomecliente": "Joao da Silva",
+  "sexo": {"codsexo": 1},
+  "rua": {"codrua": 1},
+  "bairro": {"codbairro": 1},
+  "cep": {"codcep": 1},
+  "cidade": {"codcidade": 1}
+}
+
+### Exemplo de criar compra
+POST {{baseUrl}}/compras
+Content-Type: application/json
+
+{
+  "datacompra": "2026-03-04",
+  "cliente": {"codcliente": 1}
+}
+
+### Exemplo de criar item de compra (chave composta)
+POST {{baseUrl}}/compra-produtos
+Content-Type: application/json
+
+{
+  "compra": {"codcompra": 1},
+  "produto": {"codproduto": 1},
+  "quantidade": 2,
+  "valorcp": 199.90
+}
