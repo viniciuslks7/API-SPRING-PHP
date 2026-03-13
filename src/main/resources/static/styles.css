@@ -1,0 +1,150 @@
+:root {
+  --bg: #f4f1ea;
+  --card: #ffffff;
+  --ink: #2b2a28;
+  --border: #e6ddcf;
+  --primary: #0f766e;
+  --secondary: #8a5a15;
+  --success: #166534;
+  --danger: #b42318;
+  --muted: #6b7280;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 20% 0%, #f8ecd5, transparent 35%),
+    radial-gradient(circle at 80% 100%, #d8efe8, transparent 30%),
+    var(--bg);
+}
+
+.container {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+h1 { margin-top: 0; }
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 12px;
+}
+
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+input, select, textarea {
+  width: 100%;
+  border: 1px solid #d9d2c7;
+  border-radius: 8px;
+  padding: 10px;
+  font: inherit;
+  background: #fffdf9;
+}
+
+textarea { font-family: Consolas, monospace; }
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-primary { background: var(--primary); }
+.btn-secondary { background: var(--secondary); }
+.btn-success { background: var(--success); }
+.btn-danger { background: var(--danger); }
+.btn-muted { background: var(--muted); }
+
+.records {
+  display: grid;
+  gap: 10px;
+}
+
+.record-card {
+  border: 1px solid #e0d7ca;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fffdf8;
+}
+
+.record-card.selected {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.18);
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.record-id {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.record-summary {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #4a4742;
+}
+
+.record-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.record-actions button {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.mode-line {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #1d1f21;
+  color: #d5f6ea;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 180px;
+}
+
+.hidden { display: none; }
+.empty-msg { color: #6b7280; font-style: italic; }
