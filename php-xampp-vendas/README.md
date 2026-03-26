@@ -1,57 +1,33 @@
-# PHP + XAMPP — Sistema de Vendas
+﻿# PHP + XAMPP - Sistema de Vendas
 
-Aplicação PHP que consome a API REST Spring Boot de vendas.
-Suporta **CRUD completo para todas as 13 entidades** da API, com
-menu de navegação, dropdowns de FK e tratamento de chave composta.
+Aplicacao PHP que consome a API REST Spring Boot de vendas.
+Suporta CRUD para as 13 entidades, com menu lateral, telas de listagem e formulario generico.
 
-## Estrutura dos arquivos
+## Estrutura
 
 ```
 php-xampp-vendas/
-├── api_functions.php   # Cliente HTTP centralizado (cURL) — define API_BASE
-├── config.php          # Configuração das 13 entidades (campos, FKs, labels)
-├── layout.php          # Template HTML reutilizável (head, nav, footer)
-├── index.php           # Listagem genérica — parâmetro ?recurso=sexos
-└── cadastro.php        # Formulário genérico — parâmetro ?recurso=sexos&id=1
+|- api_functions.php   # Cliente HTTP (cURL) e API_BASE
+|- config.php          # Definicao das entidades/campos/FKs
+|- layout.php          # Head + sidebar + footer compartilhados
+|- dashboard.php       # Painel inicial
+|- index.php           # Listagem generica (?recurso=...)
+|- cadastro.php        # Cadastro/edicao generico
+|- style.css           # Estilos da interface
 ```
 
 ## Como rodar no XAMPP
 
-1. **Copie** a pasta para o htdocs do XAMPP:
-   ```
-   C:\xampp\htdocs\php-xampp-vendas\
-   ```
+1. Copie a pasta para:
+   `C:\xampp\htdocs\php-xampp-vendas\`
+2. Inicie o Apache no XAMPP.
+3. Garanta a API Spring Boot ativa em `http://localhost:8090`.
+4. Acesse:
+   `http://localhost/php-xampp-vendas/dashboard.php`
 
-2. **Inicie** no XAMPP: **Apache**
+## Observacoes
 
-3. **Garanta** que a API Spring Boot está rodando em `http://localhost:8090`
-
-   Para subir a API (na raiz do projeto):
-   ```
-   ./mvnw spring-boot:run
-   ```
-
-4. **Acesse** no navegador:
-   ```
-   http://localhost/php-xampp-vendas/index.php
-   ```
-
-## Entidades suportadas
-
-| Grupo         | Entidades                                           |
-|---------------|-----------------------------------------------------|
-| Tabelas Base  | Sexos, Ruas, Bairros, UFs, Cidades, CEPs            |
-| Produtos      | Tipos, Marcas, Fornecedores, Produtos               |
-| Vendas        | Clientes, Compras, Itens de Compra (compra-produtos)|
-
-## Observações
-
-- A aplicação PHP **não acessa banco de dados diretamente** — consome apenas a API via cURL.
-- Campos FK são exibidos como `<select>` populados via chamadas à API.
-- A entidade **compra-produtos** usa chave composta (`codcompra` + `codproduto`).
-- Para alterar o host/porta da API, edite `API_BASE` em `api_functions.php`.
-
-
-- Este exemplo CRUD esta configurado para o endpoint `sexos`.
-- A API base esta em `api_functions.php` (`$baseUrl`).
-- Se quiser, posso gerar agora as paginas PHP para os outros recursos tambem (`ruas`, `bairros`, `ufs`, etc.).
+- A aplicacao PHP nao acessa o banco diretamente: tudo passa pela API.
+- Campos FK sao populados por chamadas GET da API.
+- `compra-produtos` usa chave composta (`codcompra` + `codproduto`).
+- Para mudar host/porta da API, ajuste `API_BASE` em `api_functions.php`.
