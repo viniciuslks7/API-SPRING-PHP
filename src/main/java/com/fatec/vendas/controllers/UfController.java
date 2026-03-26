@@ -1,17 +1,17 @@
-package com.fatec.vendas.controllers;
+﻿package com.fatec.vendas.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.vendas.models.Uf;
-import com.fatec.vendas.repositories.UfRepository;
+import com.fatec.vendas.services.UfService;
 
 @RestController
 @RequestMapping("/ufs")
 public class UfController extends AbstractCrudController<Uf, Integer> {
 
-    public UfController(UfRepository repository) {
-        super(repository);
+    public UfController(UfService service) {
+        super(service);
     }
 
     @Override

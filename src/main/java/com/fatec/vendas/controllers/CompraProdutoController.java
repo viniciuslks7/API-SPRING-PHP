@@ -1,7 +1,8 @@
-package com.fatec.vendas.controllers;
+﻿package com.fatec.vendas.controllers;
 
 import java.util.List;
 
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.vendas.models.CompraProduto;
 import com.fatec.vendas.models.CompraProdutoId;
-import com.fatec.vendas.repositories.CompraProdutoRepository;
+import com.fatec.vendas.services.CompraProdutoService;
 
 import jakarta.validation.Valid;
 
@@ -23,15 +24,15 @@ import jakarta.validation.Valid;
 @RequestMapping("/compra-produtos")
 public class CompraProdutoController {
 
-    private final CompraProdutoRepository repository;
+    private final CompraProdutoService service;
 
-    public CompraProdutoController(CompraProdutoRepository repository) {
-        this.repository = repository;
+    public CompraProdutoController(CompraProdutoService service) {
+        this.service = service;
     }
 
     @GetMapping
     public List<CompraProduto> findAll() {
-        return repository.findAll();
+        return service.findAll();
     }
 
     @GetMapping("/{codcompra}/{codproduto}")
@@ -39,7 +40,7 @@ public class CompraProdutoController {
             @PathVariable Integer codcompra,
             @PathVariable Integer codproduto) {
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
-        return repository.findById(id)
+        return service.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
@@ -50,7 +51,7 @@ public class CompraProdutoController {
             entity.setId(new CompraProdutoId(entity.getCompra().getCodcompra(), entity.getProduto().getCodproduto()));
         }
 
-        CompraProduto saved = repository.save(entity);
+        CompraProduto saved = service.save(entity);
         return ResponseEntity.status(HttpStatus.CREATED).body(saved);
     }
 
@@ -61,12 +62,12 @@ public class CompraProdutoController {
             @Valid @RequestBody CompraProduto entity) {
 
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
-        if (!repository.existsById(id)) {
+        if (!service.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
 
         entity.setId(id);
-        CompraProduto saved = repository.save(entity);
+        CompraProduto saved = service.save(entity);
         return ResponseEntity.ok(saved);
     }
 
@@ -76,11 +77,15 @@ public class CompraProdutoController {
             @PathVariable Integer codproduto) {
 
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
-        if (!repository.existsById(id)) {
+        if (!service.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
 
-        repository.deleteById(id);
-        return ResponseEntity.noContent().build();
+        try {
+            service.deleteById(id);
+            return ResponseEntity.noContent().build();
+        } catch (DataIntegrityViolationException ex) {
+            return ResponseEntity.status(HttpStatus.CONFLICT).build();
+        }
     }
 }

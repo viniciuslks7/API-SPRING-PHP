@@ -1,17 +1,17 @@
-package com.fatec.vendas.controllers;
+﻿package com.fatec.vendas.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fatec.vendas.models.Cliente;
-import com.fatec.vendas.repositories.ClienteRepository;
+import com.fatec.vendas.services.ClienteService;
 
 @RestController
 @RequestMapping("/clientes")
 public class ClienteController extends AbstractCrudController<Cliente, Integer> {
 
-    public ClienteController(ClienteRepository repository) {
-        super(repository);
+    public ClienteController(ClienteService service) {
+        super(service);
     }
 
     @Override
