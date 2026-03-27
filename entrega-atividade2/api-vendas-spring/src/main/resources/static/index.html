@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendas - CRUD da API</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>CRUD da API de Vendas</h1>
+
+    <section class="panel">
+      <h2>Conexao</h2>
+      <div class="grid grid-2">
+        <label>
+          Base URL da API
+          <input id="baseUrl" value="http://localhost:8090" />
+        </label>
+        <label>
+          Recurso
+          <select id="resource"></select>
+        </label>
+      </div>
+      <div class="actions">
+        <button id="btnAtualizarLista" class="btn-primary">Atualizar Lista</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Registros</h2>
+      <div id="records" class="records"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Formulario</h2>
+      <p class="mode-line">Modo atual: <strong id="modeLabel">Adicionar</strong></p>
+
+      <div class="grid grid-3" id="singleIdBox">
+        <label>
+          ID
+          <input id="idValue" placeholder="Ex: 1" />
+        </label>
+      </div>
+
+      <div class="grid grid-3 hidden" id="compositeIdBox">
+        <label>
+          codcompra
+          <input id="codcompra" placeholder="Ex: 1" />
+        </label>
+        <label>
+          codproduto
+          <input id="codproduto" placeholder="Ex: 1" />
+        </label>
+      </div>
+
+      <label>
+        Dados (JSON)
+        <textarea id="payload" rows="14"></textarea>
+      </label>
+
+      <div class="actions">
+        <button id="btnAdicionar" class="btn-primary">Adicionar</button>
+        <button id="btnAlterar" class="btn-secondary">Alterar</button>
+        <button id="btnExcluir" class="btn-danger">Excluir</button>
+        <button id="btnSalvar" class="btn-success">Salvar</button>
+        <button id="btnCancelar" class="btn-muted">Cancelar</button>
+        <button id="btnExemplo" class="btn-secondary">Carregar Exemplo</button>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Resposta</h2>
+      <pre id="output"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

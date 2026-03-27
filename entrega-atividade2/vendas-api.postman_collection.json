@@ -1,0 +1,1041 @@
+{
+  "info": {
+    "name": "Vendas API - Fatec",
+    "description": "Cole??o para testar a API REST de Vendas em Spring Boot.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8090"
+    },
+    {
+      "key": "id",
+      "value": "1"
+    },
+    {
+      "key": "codcompra",
+      "value": "1"
+    },
+    {
+      "key": "codproduto",
+      "value": "1"
+    }
+  ],
+  "item": [
+    {
+      "name": "sexos",
+      "item": [
+        {
+          "name": "GET /sexos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/sexos",
+            "description": "Lista todos os registros de sexos."
+          }
+        },
+        {
+          "name": "GET /sexos/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/sexos/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /sexos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomesexo\": \"MASCULINO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/sexos",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /sexos/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomesexo\": \"MASCULINO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/sexos/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /sexos/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/sexos/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ruas",
+      "item": [
+        {
+          "name": "GET /ruas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ruas",
+            "description": "Lista todos os registros de ruas."
+          }
+        },
+        {
+          "name": "GET /ruas/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ruas/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /ruas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomerua\": \"Rua das Flores\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ruas",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /ruas/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomerua\": \"Rua das Flores\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ruas/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /ruas/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/ruas/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "bairros",
+      "item": [
+        {
+          "name": "GET /bairros",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/bairros",
+            "description": "Lista todos os registros de bairros."
+          }
+        },
+        {
+          "name": "GET /bairros/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/bairros/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /bairros",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomebairro\": \"Centro\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/bairros",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /bairros/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomebairro\": \"Centro\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/bairros/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /bairros/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/bairros/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ufs",
+      "item": [
+        {
+          "name": "GET /ufs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ufs",
+            "description": "Lista todos os registros de ufs."
+          }
+        },
+        {
+          "name": "GET /ufs/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ufs/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /ufs",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeuf\": \"Sao Paulo\",\n  \"siglauf\": \"SP\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ufs",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /ufs/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeuf\": \"Sao Paulo\",\n  \"siglauf\": \"SP\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ufs/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /ufs/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/ufs/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "cidades",
+      "item": [
+        {
+          "name": "GET /cidades",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cidades",
+            "description": "Lista todos os registros de cidades."
+          }
+        },
+        {
+          "name": "GET /cidades/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/cidades/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /cidades",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomecidade\": \"Jales\",\n  \"uf\": {\n    \"coduf\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/cidades",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /cidades/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomecidade\": \"Jales\",\n  \"uf\": {\n    \"coduf\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/cidades/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /cidades/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/cidades/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ceps",
+      "item": [
+        {
+          "name": "GET /ceps",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ceps",
+            "description": "Lista todos os registros de ceps."
+          }
+        },
+        {
+          "name": "GET /ceps/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/ceps/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /ceps",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numerocep\": \"15700-000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ceps",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /ceps/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numerocep\": \"15700-000\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/ceps/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /ceps/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/ceps/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "tipos",
+      "item": [
+        {
+          "name": "GET /tipos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/tipos",
+            "description": "Lista todos os registros de tipos."
+          }
+        },
+        {
+          "name": "GET /tipos/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/tipos/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /tipos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nometipo\": \"Eletronico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/tipos",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /tipos/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nometipo\": \"Eletronico\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/tipos/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /tipos/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/tipos/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "marcas",
+      "item": [
+        {
+          "name": "GET /marcas",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/marcas",
+            "description": "Lista todos os registros de marcas."
+          }
+        },
+        {
+          "name": "GET /marcas/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/marcas/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /marcas",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomemarca\": \"Marca X\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/marcas",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /marcas/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomemarca\": \"Marca X\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/marcas/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /marcas/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/marcas/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "clientes",
+      "item": [
+        {
+          "name": "GET /clientes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/clientes",
+            "description": "Lista todos os registros de clientes."
+          }
+        },
+        {
+          "name": "GET /clientes/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/clientes/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /clientes",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomecliente\": \"Joao da Silva\",\n  \"sexo\": {\n    \"codsexo\": 1\n  },\n  \"rua\": {\n    \"codrua\": 1\n  },\n  \"bairro\": {\n    \"codbairro\": 1\n  },\n  \"cep\": {\n    \"codcep\": 1\n  },\n  \"cidade\": {\n    \"codcidade\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/clientes",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /clientes/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomecliente\": \"Joao da Silva\",\n  \"sexo\": {\n    \"codsexo\": 1\n  },\n  \"rua\": {\n    \"codrua\": 1\n  },\n  \"bairro\": {\n    \"codbairro\": 1\n  },\n  \"cep\": {\n    \"codcep\": 1\n  },\n  \"cidade\": {\n    \"codcidade\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/clientes/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /clientes/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/clientes/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "fornecedores",
+      "item": [
+        {
+          "name": "GET /fornecedores",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/fornecedores",
+            "description": "Lista todos os registros de fornecedores."
+          }
+        },
+        {
+          "name": "GET /fornecedores/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/fornecedores/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /fornecedores",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomefornecedor\": \"Fornecedor ABC\",\n  \"rua\": {\n    \"codrua\": 1\n  },\n  \"bairro\": {\n    \"codbairro\": 1\n  },\n  \"cep\": {\n    \"codcep\": 1\n  },\n  \"cidade\": {\n    \"codcidade\": 1\n  },\n  \"telefonefornecedor\": \"(17) 99999-9999\",\n  \"emailfornecedor\": \"contato@fornecedor.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/fornecedores",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /fornecedores/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomefornecedor\": \"Fornecedor ABC\",\n  \"rua\": {\n    \"codrua\": 1\n  },\n  \"bairro\": {\n    \"codbairro\": 1\n  },\n  \"cep\": {\n    \"codcep\": 1\n  },\n  \"cidade\": {\n    \"codcidade\": 1\n  },\n  \"telefonefornecedor\": \"(17) 99999-9999\",\n  \"emailfornecedor\": \"contato@fornecedor.com\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/fornecedores/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /fornecedores/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/fornecedores/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "produtos",
+      "item": [
+        {
+          "name": "GET /produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/produtos",
+            "description": "Lista todos os registros de produtos."
+          }
+        },
+        {
+          "name": "GET /produtos/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/produtos/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /produtos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeproduto\": \"Mouse Gamer\",\n  \"tipo\": {\n    \"codtipo\": 1\n  },\n  \"marca\": {\n    \"codmarca\": 1\n  },\n  \"quantidade\": 30,\n  \"valor\": 149.9,\n  \"fornecedor\": {\n    \"codfornecedor\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/produtos",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /produtos/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nomeproduto\": \"Mouse Gamer\",\n  \"tipo\": {\n    \"codtipo\": 1\n  },\n  \"marca\": {\n    \"codmarca\": 1\n  },\n  \"quantidade\": 30,\n  \"valor\": 149.9,\n  \"fornecedor\": {\n    \"codfornecedor\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/produtos/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /produtos/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/produtos/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "compras",
+      "item": [
+        {
+          "name": "GET /compras",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/compras",
+            "description": "Lista todos os registros de compras."
+          }
+        },
+        {
+          "name": "GET /compras/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/compras/{{id}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /compras",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datacompra\": \"2026-03-04\",\n  \"cliente\": {\n    \"codcliente\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/compras",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /compras/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"datacompra\": \"2026-03-04\",\n  \"cliente\": {\n    \"codcliente\": 1\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/compras/{{id}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /compras/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/compras/{{id}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    },
+    {
+      "name": "compra-produtos",
+      "item": [
+        {
+          "name": "GET /compra-produtos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/compra-produtos",
+            "description": "Lista todos os registros de compra-produtos."
+          }
+        },
+        {
+          "name": "GET /compra-produtos/id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/compra-produtos/{{codcompra}}/{{codproduto}}",
+            "description": "Busca por identificador."
+          }
+        },
+        {
+          "name": "POST /compra-produtos",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"compra\": {\n    \"codcompra\": 1\n  },\n  \"produto\": {\n    \"codproduto\": 1\n  },\n  \"quantidade\": 2,\n  \"valorcp\": 299.8\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/compra-produtos",
+            "description": "Cria um novo registro."
+          }
+        },
+        {
+          "name": "PUT /compra-produtos/id",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"compra\": {\n    \"codcompra\": 1\n  },\n  \"produto\": {\n    \"codproduto\": 1\n  },\n  \"quantidade\": 2,\n  \"valorcp\": 299.8\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": "{{baseUrl}}/compra-produtos/{{codcompra}}/{{codproduto}}",
+            "description": "Atualiza um registro existente."
+          }
+        },
+        {
+          "name": "DELETE /compra-produtos/id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{baseUrl}}/compra-produtos/{{codcompra}}/{{codproduto}}",
+            "description": "Exclui um registro."
+          }
+        }
+      ]
+    }
+  ]
+}
