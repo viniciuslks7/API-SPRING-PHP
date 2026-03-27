@@ -1,4 +1,4 @@
-﻿package com.fatec.vendas.controllers;
+package com.fatec.vendas.controllers;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public abstract class AbstractCrudController<T, ID> {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<T> findById(@PathVariable ID id) {
+    public ResponseEntity<T> findById(@PathVariable("id") ID id) {
         return service.findById(id)
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
@@ -45,7 +45,7 @@ public abstract class AbstractCrudController<T, ID> {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<T> update(@PathVariable ID id, @Valid @RequestBody T entity) {
+    public ResponseEntity<T> update(@PathVariable("id") ID id, @Valid @RequestBody T entity) {
         if (!service.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
@@ -56,7 +56,7 @@ public abstract class AbstractCrudController<T, ID> {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delete(@PathVariable ID id) {
+    public ResponseEntity<Void> delete(@PathVariable("id") ID id) {
         if (!service.existsById(id)) {
             return ResponseEntity.notFound().build();
         }

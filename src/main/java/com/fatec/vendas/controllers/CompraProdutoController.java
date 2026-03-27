@@ -1,4 +1,4 @@
-﻿package com.fatec.vendas.controllers;
+package com.fatec.vendas.controllers;
 
 import java.util.List;
 
@@ -37,8 +37,8 @@ public class CompraProdutoController {
 
     @GetMapping("/{codcompra}/{codproduto}")
     public ResponseEntity<CompraProduto> findById(
-            @PathVariable Integer codcompra,
-            @PathVariable Integer codproduto) {
+            @PathVariable("codcompra") Integer codcompra,
+            @PathVariable("codproduto") Integer codproduto) {
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
         return service.findById(id)
                 .map(ResponseEntity::ok)
@@ -57,8 +57,8 @@ public class CompraProdutoController {
 
     @PutMapping("/{codcompra}/{codproduto}")
     public ResponseEntity<CompraProduto> update(
-            @PathVariable Integer codcompra,
-            @PathVariable Integer codproduto,
+            @PathVariable("codcompra") Integer codcompra,
+            @PathVariable("codproduto") Integer codproduto,
             @Valid @RequestBody CompraProduto entity) {
 
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
@@ -73,8 +73,8 @@ public class CompraProdutoController {
 
     @DeleteMapping("/{codcompra}/{codproduto}")
     public ResponseEntity<Void> delete(
-            @PathVariable Integer codcompra,
-            @PathVariable Integer codproduto) {
+            @PathVariable("codcompra") Integer codcompra,
+            @PathVariable("codproduto") Integer codproduto) {
 
         CompraProdutoId id = new CompraProdutoId(codcompra, codproduto);
         if (!service.existsById(id)) {
